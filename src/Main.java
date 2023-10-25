@@ -12,7 +12,7 @@ public class Main {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
-    public static void main(String[] args) throws SQLException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         Main program = new Main();
         program.runDemoTransactions();
     }
@@ -36,8 +36,8 @@ public class Main {
         });
 
         // run transactions
-        session2.start();
         session1.start();
+        session2.start();
 
         session1.join();
         session2.join();
